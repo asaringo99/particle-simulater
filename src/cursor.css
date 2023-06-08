@@ -1,0 +1,8 @@
+#cursor {
+    position: absolute;
+    pointer-events: none;
+    background-color: #fff;
+    border: 1px solid black; 
+    border-radius: 50%;
+    transition: transform 0.5s ease;
+}
