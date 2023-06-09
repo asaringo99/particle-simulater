@@ -9,9 +9,24 @@ class Particle {
         this.mass = mass;
     }
 
+    changePositionByRatio(size) {
+        this.x *= size.x
+        this.y *= size.y
+    }
+    
+    toRandomPosition() {
+        this.x *= Math.random()
+        this.y *= Math.random()
+    }
+
     addVelocity(v){
         this.velocityX += v.directionX
         this.velocityY += v.directionY
+    }
+
+    toRandomVelocity(){
+        this.velocityX = Math.random() - Math.random()
+        this.velocityY = Math.random() - Math.random()
     }
     
     addVelocityToOpponent(otherParticle, v){
@@ -39,8 +54,8 @@ class Particle {
     }
 
     updateVelocity() {
-        this.velocityX *= 0.9;
-        this.velocityY *= 0.9;
+        this.velocityX *= viscocity;
+        this.velocityY *= viscocity;
         particles.forEach(otherParticle => {
             if (this === otherParticle) return;
             if (!this.isCollide(otherParticle)) return
@@ -87,7 +102,6 @@ class Particle {
         const opponentVelocityY = factor.velocityY
         const opponentPositionX = factor.positionX
         const opponentPositionY = factor.positionY
-        
         if(!canEffectForce(opponentPositionX, opponentPositionY, this.x, this.y)) return
         const vectorToOpponent = this.calculateVectorToOpponent({
             x: opponentPositionX,
