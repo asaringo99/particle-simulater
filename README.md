@@ -17,6 +17,10 @@
 クリックするとマウスが黄色っぽく変色する。
 クリック状態でマウスを動かすと粒子が移動する。
 
+## 場所
+[ここ](https://asaringo99.github.io/particle-simulater/main.html)で遊べます。
+
+
 ## UI
 以下の通り
 <img width="1626" alt="スクリーンショット 2023-06-08 20 55 54" src="https://github.com/asaringo99/particle-simulater/assets/95675619/896918a0-1b12-4663-a664-893259ee981e">
