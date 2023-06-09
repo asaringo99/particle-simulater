@@ -1,12 +1,7 @@
 let cursor = document.getElementById("cursor");
-const radius = 50
+const radius = 30
 cursor.style.width = `${radius}px`
 cursor.style.height = `${radius}px`
-
-cursor.addEventListener('click', () => {
-
-    this.classList.toggle('clicked');
-});
 
 window.addEventListener('mousemove', (e) => {
     let mousePosition = {
@@ -22,6 +17,6 @@ window.addEventListener('mouseup', () => {
     cursor.style.transform = 'scale(1)';
 });
 window.addEventListener('mousedown', () => {
-    cursor.style.backgroundColor = '#dd8';
-    cursor.style.transform = 'scale(2)';
+    cursor.style.backgroundColor = '#f0f';
+    cursor.style.transform = 'scale(3)';
 });

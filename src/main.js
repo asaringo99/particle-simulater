@@ -65,11 +65,11 @@ function animate() {
 
 animate();
 
-for (let i = 0; i < 1; i++) {
+for (let i = 0; i < specialParticleNum; i++) {
     const particle = ParticleFactory.createSpecialParticle()
     particles.push(particle);
 }
-for (let i = 0; i < 2000; i++) {
+for (let i = 0; i < defaultParticleNum; i++) {
     const particle = ParticleFactory.createDefaultParticle()
     particles.push(particle);
 }
