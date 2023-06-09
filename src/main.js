@@ -43,16 +43,10 @@ button.style.height = '100px';
 button.style.fontSize = '30px';
 button.textContent = '+';
 button.addEventListener('click', () => {
-    const radius = Math.ceil(Math.random() * 4)
-    let particle = ParticleFactory.createRequire({
-        positionX: Math.random() * canvas.width,
-        positionY: Math.random() * canvas.height,
-        velocityX: Math.random() - Math.random(),
-        velocityY: Math.random() - Math.random(),
-        radius: radius,
-        dencity: 1,
-        buffer: radius * 0.5
-    })
+    let particle = ParticleFactory.createDefaultParticle()
+    particle.changePositionByRatio({x: canvas.width, y: canvas.height})
+    particle.toRandomPosition()
+    particle.toRandomVelocity()
     particles.push(particle);
 });
 document.body.appendChild(button);
@@ -72,26 +66,17 @@ function animate() {
 animate();
 
 for (let i = 0; i < 1; i++) {
-    let particle = ParticleFactory.createRequire({
-        positionX: canvas.width / 2,
-        positionY: canvas.height / 2,
-        velocityX: 0,
-        velocityY: 0,
-        radius: 200,
-        dencity: 1,
-        buffer: 300 * 0.5
-    })
+    const particle = ParticleFactory.createSpecialParticle()
     particles.push(particle);
 }
 for (let i = 0; i < 2000; i++) {
-    let particle = ParticleFactory.createRequire({
-        positionX: Math.random() * canvas.width,
-        positionY: Math.random() * canvas.height,
-        velocityX: Math.random() * 2 - Math.random() * 2,
-        velocityY: Math.random() * 2 - Math.random() * 2,
-        radius: 2,
-        dencity: 1,
-        buffer: 2 * 0.5
-    })
+    const particle = ParticleFactory.createDefaultParticle()
     particles.push(particle);
 }
+
+particles.map((particle) => {
+    particle.changePositionByRatio({x: canvas.width, y: canvas.height})
+    particle.toRandomPosition()
+    particle.toRandomVelocity()
+    return particle
+})
