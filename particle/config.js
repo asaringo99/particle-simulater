@@ -1,5 +1,5 @@
-const viscocity = 0.95
-const defaultParticleSize = 1.5
+const viscocity = 0.92
+const defaultParticleSize = 1
 const defaultParticleNum = 2000
 const defaultParticleDencity = 1
 const specialParticleSize = 200
