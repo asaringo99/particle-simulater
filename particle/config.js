@@ -1,10 +1,10 @@
-const viscocity = 0.97
+const viscocity = 0.95
 const defaultParticleSize = 1.5
 const defaultParticleNum = 2000
 const defaultParticleDencity = 1
 const specialParticleSize = 200
 const specialParticleNum = 1
-const specialParticleDencity = 1;
+const specialParticleDencity = 1000;
 
 const mouseEffectDistance = 300;
 const mouseEffectCoefficient = 0.02
